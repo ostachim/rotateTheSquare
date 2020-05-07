@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <Head>
+        <TITLE>kwadrat obracający się</TITLE>
+        <style>
+            button{
+                width: 180px;
+                height: 90px;
+                font-family:arial;
+                font-size:40px;
+                text-transform:uppercase;
+                border-style:none;
+                background-color:#333;
+                color:white;
+                border-radius:10px;
+                cursor:pointer;
+            }
+            button:hover{
+                background-color:#222;
+            }
+            .kwadrat{
+                position:absolute;
+                width:30vh;
+                height:30vh;
+                background-color:#333;
+                left:50%;
+                top:50%;
+                transform:translate(-50%,-50%);
+                transition:1s;
+                
+            }
+        </style>
+    </Head>
+    <BODY>
+        <button>Obróć</button>
+        <div class="kwadrat"></div>
+
+        <script>
+            const btn = document.querySelector("button");
+            const crl = document.querySelector(".kwadrat");
+            let crlDeg = 0;
+            function obracanie() {
+                crlDeg+=45
+                crl.style.transform = "translate(-50%,-50%) rotate("+ crlDeg +"deg)"
+                
+            }
+            btn.addEventListener("click",obracanie);
+
+        </script>
+    </BODY>
+
+</html>
